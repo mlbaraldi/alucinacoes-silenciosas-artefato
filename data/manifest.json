@@ -1,0 +1,212 @@
+{
+  "command": "python scripts/extract_observations.py --artifacts <ARTIFACTS_DIR> --output <OUTPUT_PATH> --manifest <MANIFEST_PATH>",
+  "contract": {
+    "categories": "categorias distintas derivadas de TYPE_TO_CATEGORY",
+    "fail_closed": [
+      "tipo de alucinação desconhecido ou anotação sem tipo",
+      "is_pass não booleano ou status funcional desconhecido",
+      "task_id fora do padrão opaco aceito",
+      "row_number duplicado, não inteiro ou fora da ordem densa",
+      "source_file duplicado, absoluto ou com extensão incongruente ao benchmark",
+      "modelo ou dataset fora da taxonomia do conjunto",
+      "issue apontando fonte inexistente ou com row/model/dataset divergente",
+      "issue_key duplicada",
+      "fonte simultaneamente com falha de parsing e com issues",
+      "falha de parsing fora do metadata ou repetida no log"
+    ],
+    "field_allowlist": {
+      "evaluation_result": [
+        "is_pass",
+        "status"
+      ],
+      "issue": [
+        "issue_key",
+        "source_file",
+        "row_number",
+        "model",
+        "dataset",
+        "sonar_type"
+      ],
+      "label": [
+        "hallucination-type"
+      ],
+      "metadata": [
+        "row_number",
+        "_id",
+        "model",
+        "dataset",
+        "source_file",
+        "code_labels",
+        "evaluation_result"
+      ],
+      "note": "projeção estrutural: campos fora da allowlist — inclusive conflict-content, error_message, error_detail_message, project, message e generation_line — nunca entram na observação"
+    },
+    "functional_pass": "is_pass booleano tem precedência; sem is_pass, status pass aprova e fail/timeout reprovam; desfecho ausente/nulo, sem as duas chaves, com is_pass não booleano ou status desconhecido falha fechado — nenhuma reprovação é inferida por omissão",
+    "issue_count": "registros de mapped_issues.json para o mesmo source_file",
+    "row_order": "mesma ordem do metadata.jsonl, row_id denso de 1 a N",
+    "static_parse_status": "parse_failed quando o caminho relativo consta como falha de parsing no sonar_scan.log; caso contrário parsed",
+    "types": "hallucination-type distintos por implementação, em ordem alfabética",
+    "upstream": {
+      "result_sha256": "b2f7d2087a6789c7dd89a7a22fb937083f1784f1df97a3a69595b74179c84bfc",
+      "revision": "c15a328c90b2046c5751e16b79eb00ddbeace7b1",
+      "used_as_input": false
+    }
+  },
+  "counts": {
+    "annotated_rows": 1134,
+    "annotations": 1212,
+    "category_associations": 1181,
+    "functional_fail": 1962,
+    "functional_pass": 1158,
+    "issues": 1426,
+    "max_issues_per_parsed_annotated": 14,
+    "max_issues_per_parsed_corpus": 14,
+    "multi_category_implementations": 47,
+    "multi_type_implementations": 53,
+    "parse_failures": 111,
+    "rows": 3120,
+    "same_category_collapse_pairs": 6,
+    "source_files_with_issues": 838,
+    "task_clusters": 433,
+    "type_associations": 1187
+  },
+  "generator": {
+    "name": "extract_observations",
+    "version": "0.1.0.dev0"
+  },
+  "inputs": [
+    {
+      "fields_ignored": [
+        "generation_line_offset",
+        "index_within_model",
+        "project"
+      ],
+      "fields_used": [
+        "row_number",
+        "_id",
+        "model",
+        "dataset",
+        "source_file",
+        "code_labels",
+        "evaluation_result"
+      ],
+      "file": "metadata.jsonl",
+      "records": 3120,
+      "role": "metadata",
+      "sha256": "f9335b54afcf2f0d23c37b2c3dc1fe0f0bf34b1a5fa1d49fc84422cb5e73113b",
+      "size_bytes": 5861042
+    },
+    {
+      "file": "mapped_issues.json",
+      "records": 1426,
+      "role": "mapped_issues",
+      "sha256": "c050343ec432246ddfbf66d6cd9965f117634aa75eef9488be40b398fa290544",
+      "size_bytes": 826359,
+      "source_files": 838
+    },
+    {
+      "file": "sonar_scan.log",
+      "parse_error_paths": 111,
+      "parse_error_pattern_hits": {
+        "file": 55,
+        "source_file": 56
+      },
+      "role": "sonar_scan_log",
+      "sha256": "61667575081b6b56bf5435cceb41c7b633870738ade7aa14eb6fef5afb8975e4",
+      "size_bytes": 35554
+    }
+  ],
+  "observation_schema": "observations/1",
+  "observation_schema_summary": {
+    "enums": {
+      "categories": [
+        "R",
+        "C",
+        "K"
+      ],
+      "dataset": [
+        "CEJava",
+        "CEPython",
+        "HumanEval"
+      ],
+      "model": [
+        "codellama-7b",
+        "deepseek-coder-1.3b",
+        "deepseek-coder-7b",
+        "deepseek-r1",
+        "gpt-4"
+      ],
+      "static_parse_status": [
+        "parsed",
+        "parse_failed"
+      ],
+      "types": [
+        "Algorithm",
+        "Behavior Conflicting",
+        "Common Sense",
+        "Computer Theory",
+        "Data Conflicting",
+        "Fragmented Logics",
+        "Inconsistent Libraries",
+        "Library/Project",
+        "Mathematics & Natural Science",
+        "Undefined Variables",
+        "Useless Statements (executed without effect)",
+        "Useless Statements (unexecuted)"
+      ]
+    },
+    "excluded": [
+      "código gerado e trechos",
+      "prompt, enunciado e explicações",
+      "conflict-content e hallucination-type-other (texto livre)",
+      "error_message e error_detail_message (podem conter código)",
+      "mensagens de erro ou de issue",
+      "nomes de projeto e caminhos de arquivo",
+      "log bruto do scanner"
+    ],
+    "fields": [
+      "row_id",
+      "task_id",
+      "model",
+      "dataset",
+      "functional_pass",
+      "static_parse_status",
+      "issue_count",
+      "types",
+      "categories",
+      "annotation_count",
+      "type_annotations"
+    ],
+    "order": "row_id crescente, mesma ordem do metadata.jsonl de origem",
+    "projection": "allowlist estrutural em alucinacoes/constants.py",
+    "schema": "observations/1"
+  },
+  "outputs": [
+    {
+      "file": "observations.jsonl",
+      "records": 3120,
+      "role": "observations",
+      "sha256": "5eba63e300a0bdf69dc2ca89e3d8d09b14ed8373f98df63a761ec1770f267c44"
+    }
+  ],
+  "path_policy": "nenhum caminho absoluto é registrado neste manifesto",
+  "schema": "manifest/1",
+  "scope": "full_dataset",
+  "scope_basis": "sha256 dos três insumos confere com o pin do corpus completo",
+  "source_dataset": {
+    "layout": "analysis/sonarqube/full_dataset/artifacts",
+    "name": "code_hallucination full_dataset artifacts",
+    "upstream": {
+      "note": "declarado em NOTICE.md; result.jsonl não é insumo desta extração, que usa apenas a projeção publicada em full_dataset/artifacts",
+      "repository": "https://github.com/Lorien1128/code_hallucination",
+      "result_file": "result.jsonl",
+      "result_sha256": "b2f7d2087a6789c7dd89a7a22fb937083f1784f1df97a3a69595b74179c84bfc",
+      "revision": "c15a328c90b2046c5751e16b79eb00ddbeace7b1",
+      "used_as_input": false
+    }
+  },
+  "toolchain": {
+    "artifact_version": "0.1.0.dev0",
+    "python_version": "3.14.9"
+  }
+}

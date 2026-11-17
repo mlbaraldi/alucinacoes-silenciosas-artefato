@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Ao citar este artefato, identifique a tag e o commit utilizados e cite também a fonte dos dados descrita em NOTICE.md."
+title: "Alucinações silenciosas em código gerado por LLMs: artefato de reprodução"
+type: software
+version: 1.0.0
+authors:
+  - family-names: Bemm
+    given-names: Priscila C. F. J.
+  - family-names: Baraldi
+    given-names: Marcelo L.
+repository-code: "https://github.com/mlbaraldi/alucinacoes-silenciosas-artefato"
+abstract: "Reprodução offline de métricas descritivas e bootstrap a partir de observações estruturadas da execução full_dataset, sem reexecutar modelos, testes funcionais ou SonarQube."

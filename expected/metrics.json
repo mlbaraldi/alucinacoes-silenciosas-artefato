@@ -1,0 +1,1021 @@
+{
+  "schema": "expected-metrics/1",
+  "scope": "full_dataset",
+  "status": "valores de referência conferidos; execução limpa validada pelo orquestrador (docs/REVIEW.md)",
+  "description": "Valores de referência independentes e conferidos contra as Tabelas 1-8 do manuscrito revisado e a aritmética delas; não são copiados de outputs/ e não constituem, por si, reprodução numérica 1:1 de todo o texto.",
+  "metrics": {
+    "counts": {
+      "rows": 3120,
+      "annotated_rows": 1134,
+      "task_clusters": 433,
+      "annotations": 1212,
+      "type_associations": 1187,
+      "category_associations": 1181,
+      "annotated_functional_pass": 71,
+      "annotated_functional_fail": 1063,
+      "corpus_functional_pass": 1158,
+      "corpus_functional_fail": 1962,
+      "annotated_parsed": 1090,
+      "annotated_inconclusive": 44,
+      "annotated_with_issues": 379,
+      "annotated_without_issues": 711,
+      "corpus_parsed": 3009,
+      "corpus_inconclusive": 111,
+      "corpus_with_issues": 838,
+      "corpus_without_issues": 2171,
+      "max_issues_per_parsed_annotated": 14,
+      "types_with_annotations": 12,
+      "categories_with_annotations": 3,
+      "silent_implementations": 25,
+      "silent_type_associations": 26,
+      "silent_category_associations": 26,
+      "silent_top4_type_associations": 22,
+      "types_with_silent_associations": 8,
+      "parsed_annotated_total": 1090,
+      "gate_functional_only": 686,
+      "gate_static_only": 46,
+      "gate_both": 333,
+      "gate_none": 25,
+      "gate_inconclusive": 44,
+      "multi_type_implementations": 53,
+      "multi_category_implementations": 47,
+      "same_category_collapse_pairs": 6
+    },
+    "parse_histogram": {
+      "labels": [
+        "0",
+        "1",
+        "2",
+        "3-4",
+        "5+"
+      ],
+      "counts": [
+        711,
+        250,
+        66,
+        42,
+        21
+      ],
+      "total": 1090,
+      "max": 14
+    },
+    "gate_states": {
+      "functional_only": {
+        "n": 686,
+        "pct_of_annotated": 60.5
+      },
+      "static_only": {
+        "n": 46,
+        "pct_of_annotated": 4.1
+      },
+      "both": {
+        "n": 333,
+        "pct_of_annotated": 29.4
+      },
+      "none": {
+        "n": 25,
+        "pct_of_annotated": 2.2
+      },
+      "inconclusive": {
+        "n": 44,
+        "pct_of_annotated": 3.9
+      }
+    },
+    "tables": {
+      "gate_cross_corpus": [
+        {
+          "population": "annotated",
+          "stratum": "functional_pass",
+          "with_issues": 46,
+          "without_issues": 25,
+          "inconclusive": 0,
+          "total": 71,
+          "pct_with_issues_of_total": 64.8,
+          "pct_with_issues_of_parsed": 64.8
+        },
+        {
+          "population": "annotated",
+          "stratum": "functional_fail",
+          "with_issues": 333,
+          "without_issues": 686,
+          "inconclusive": 44,
+          "total": 1063,
+          "pct_with_issues_of_total": 31.3,
+          "pct_with_issues_of_parsed": 32.7
+        },
+        {
+          "population": "annotated",
+          "stratum": "total",
+          "with_issues": 379,
+          "without_issues": 711,
+          "inconclusive": 44,
+          "total": 1134,
+          "pct_with_issues_of_total": 33.4,
+          "pct_with_issues_of_parsed": 34.8
+        },
+        {
+          "population": "corpus",
+          "stratum": "functional_pass",
+          "with_issues": 265,
+          "without_issues": 891,
+          "inconclusive": 2,
+          "total": 1158,
+          "pct_with_issues_of_total": 22.9,
+          "pct_with_issues_of_parsed": 22.9
+        },
+        {
+          "population": "corpus",
+          "stratum": "functional_fail",
+          "with_issues": 573,
+          "without_issues": 1280,
+          "inconclusive": 109,
+          "total": 1962,
+          "pct_with_issues_of_total": 29.2,
+          "pct_with_issues_of_parsed": 30.9
+        },
+        {
+          "population": "corpus",
+          "stratum": "total",
+          "with_issues": 838,
+          "without_issues": 2171,
+          "inconclusive": 111,
+          "total": 3120,
+          "pct_with_issues_of_total": 26.9,
+          "pct_with_issues_of_parsed": 27.8
+        }
+      ],
+      "annotations_by_model": [
+        {
+          "model": "codellama-7b",
+          "annotated_n": 289,
+          "annotated_pct": 25.5,
+          "silent_n": 6,
+          "silent_pct_of_model": 2.1
+        },
+        {
+          "model": "deepseek-coder-1.3b",
+          "annotated_n": 257,
+          "annotated_pct": 22.7,
+          "silent_n": 3,
+          "silent_pct_of_model": 1.2
+        },
+        {
+          "model": "deepseek-coder-7b",
+          "annotated_n": 217,
+          "annotated_pct": 19.1,
+          "silent_n": 6,
+          "silent_pct_of_model": 2.8
+        },
+        {
+          "model": "deepseek-r1",
+          "annotated_n": 181,
+          "annotated_pct": 16.0,
+          "silent_n": 5,
+          "silent_pct_of_model": 2.8
+        },
+        {
+          "model": "gpt-4",
+          "annotated_n": 190,
+          "annotated_pct": 16.8,
+          "silent_n": 5,
+          "silent_pct_of_model": 2.6
+        },
+        {
+          "model": "TOTAL",
+          "annotated_n": 1134,
+          "annotated_pct": 100.0,
+          "silent_n": 25,
+          "silent_pct_of_model": 2.2
+        }
+      ],
+      "annotations_by_benchmark": [
+        {
+          "benchmark": "CEJava",
+          "annotated_n": 547,
+          "annotated_pct": 48.2,
+          "silent_n": 14,
+          "silent_pct_of_benchmark": 2.6
+        },
+        {
+          "benchmark": "CEPython",
+          "annotated_n": 426,
+          "annotated_pct": 37.6,
+          "silent_n": 6,
+          "silent_pct_of_benchmark": 1.4
+        },
+        {
+          "benchmark": "HumanEval",
+          "annotated_n": 161,
+          "annotated_pct": 14.2,
+          "silent_n": 5,
+          "silent_pct_of_benchmark": 3.1
+        }
+      ],
+      "prevalence_by_benchmark_model": [
+        {
+          "benchmark": "CEJava",
+          "model": "codellama-7b",
+          "annotated_pct": 53.0
+        },
+        {
+          "benchmark": "CEJava",
+          "model": "deepseek-coder-1.3b",
+          "annotated_pct": 48.7
+        },
+        {
+          "benchmark": "CEJava",
+          "model": "deepseek-coder-7b",
+          "annotated_pct": 41.7
+        },
+        {
+          "benchmark": "CEJava",
+          "model": "deepseek-r1",
+          "annotated_pct": 49.1
+        },
+        {
+          "benchmark": "CEJava",
+          "model": "gpt-4",
+          "annotated_pct": 45.2
+        },
+        {
+          "benchmark": "CEPython",
+          "model": "codellama-7b",
+          "annotated_pct": 40.9
+        },
+        {
+          "benchmark": "CEPython",
+          "model": "deepseek-coder-1.3b",
+          "annotated_pct": 43.9
+        },
+        {
+          "benchmark": "CEPython",
+          "model": "deepseek-coder-7b",
+          "annotated_pct": 40.0
+        },
+        {
+          "benchmark": "CEPython",
+          "model": "deepseek-r1",
+          "annotated_pct": 28.3
+        },
+        {
+          "benchmark": "CEPython",
+          "model": "gpt-4",
+          "annotated_pct": 32.2
+        },
+        {
+          "benchmark": "HumanEval",
+          "model": "codellama-7b",
+          "annotated_pct": 44.5
+        },
+        {
+          "benchmark": "HumanEval",
+          "model": "deepseek-coder-1.3b",
+          "annotated_pct": 26.8
+        },
+        {
+          "benchmark": "HumanEval",
+          "model": "deepseek-coder-7b",
+          "annotated_pct": 17.7
+        },
+        {
+          "benchmark": "HumanEval",
+          "model": "deepseek-r1",
+          "annotated_pct": 1.8
+        },
+        {
+          "benchmark": "HumanEval",
+          "model": "gpt-4",
+          "annotated_pct": 7.3
+        }
+      ],
+      "gate_states_by_type": [
+        {
+          "type": "Algorithm",
+          "total_n": 60,
+          "functional_only_pct": 30.0,
+          "static_only_pct": 21.7,
+          "both_pct": 31.7,
+          "none_pct": 11.7,
+          "inconclusive_pct": 5.0
+        },
+        {
+          "type": "Behavior Conflicting",
+          "total_n": 420,
+          "functional_only_pct": 63.1,
+          "static_only_pct": 6.2,
+          "both_pct": 21.4,
+          "none_pct": 1.4,
+          "inconclusive_pct": 7.9
+        },
+        {
+          "type": "Common Sense",
+          "total_n": 3,
+          "functional_only_pct": 66.7,
+          "static_only_pct": 0.0,
+          "both_pct": 33.3,
+          "none_pct": 0.0,
+          "inconclusive_pct": 0.0
+        },
+        {
+          "type": "Computer Theory",
+          "total_n": 27,
+          "functional_only_pct": 70.4,
+          "static_only_pct": 0.0,
+          "both_pct": 29.6,
+          "none_pct": 0.0,
+          "inconclusive_pct": 0.0
+        },
+        {
+          "type": "Data Conflicting",
+          "total_n": 50,
+          "functional_only_pct": 86.0,
+          "static_only_pct": 0.0,
+          "both_pct": 12.0,
+          "none_pct": 2.0,
+          "inconclusive_pct": 0.0
+        },
+        {
+          "type": "Fragmented Logics",
+          "total_n": 21,
+          "functional_only_pct": 85.7,
+          "static_only_pct": 0.0,
+          "both_pct": 9.5,
+          "none_pct": 4.8,
+          "inconclusive_pct": 0.0
+        },
+        {
+          "type": "Inconsistent Libraries",
+          "total_n": 2,
+          "functional_only_pct": 100.0,
+          "static_only_pct": 0.0,
+          "both_pct": 0.0,
+          "none_pct": 0.0,
+          "inconclusive_pct": 0.0
+        },
+        {
+          "type": "Library/Project",
+          "total_n": 309,
+          "functional_only_pct": 58.3,
+          "static_only_pct": 2.9,
+          "both_pct": 35.9,
+          "none_pct": 1.9,
+          "inconclusive_pct": 1.0
+        },
+        {
+          "type": "Mathematics & Natural Science",
+          "total_n": 17,
+          "functional_only_pct": 88.2,
+          "static_only_pct": 0.0,
+          "both_pct": 11.8,
+          "none_pct": 0.0,
+          "inconclusive_pct": 0.0
+        },
+        {
+          "type": "Undefined Variables",
+          "total_n": 200,
+          "functional_only_pct": 56.5,
+          "static_only_pct": 0.0,
+          "both_pct": 41.0,
+          "none_pct": 0.5,
+          "inconclusive_pct": 2.0
+        },
+        {
+          "type": "Useless Statements (executed without effect)",
+          "total_n": 71,
+          "functional_only_pct": 46.5,
+          "static_only_pct": 1.4,
+          "both_pct": 47.9,
+          "none_pct": 1.4,
+          "inconclusive_pct": 2.8
+        },
+        {
+          "type": "Useless Statements (unexecuted)",
+          "total_n": 7,
+          "functional_only_pct": 14.3,
+          "static_only_pct": 14.3,
+          "both_pct": 28.6,
+          "none_pct": 42.9,
+          "inconclusive_pct": 0.0
+        }
+      ],
+      "gate_states_by_model_benchmark": [
+        {
+          "model": "codellama-7b",
+          "benchmark": "CEJava",
+          "functional_only_n": 58,
+          "static_only_n": 12,
+          "both_n": 48,
+          "none_n": 3,
+          "inconclusive_n": 1,
+          "total_n": 122
+        },
+        {
+          "model": "codellama-7b",
+          "benchmark": "CEPython",
+          "functional_only_n": 74,
+          "static_only_n": 0,
+          "both_n": 20,
+          "none_n": 0,
+          "inconclusive_n": 0,
+          "total_n": 94
+        },
+        {
+          "model": "codellama-7b",
+          "benchmark": "HumanEval",
+          "functional_only_n": 56,
+          "static_only_n": 0,
+          "both_n": 12,
+          "none_n": 3,
+          "inconclusive_n": 2,
+          "total_n": 73
+        },
+        {
+          "model": "deepseek-coder-1.3b",
+          "benchmark": "CEJava",
+          "functional_only_n": 40,
+          "static_only_n": 12,
+          "both_n": 44,
+          "none_n": 3,
+          "inconclusive_n": 13,
+          "total_n": 112
+        },
+        {
+          "model": "deepseek-coder-1.3b",
+          "benchmark": "CEPython",
+          "functional_only_n": 81,
+          "static_only_n": 0,
+          "both_n": 15,
+          "none_n": 0,
+          "inconclusive_n": 5,
+          "total_n": 101
+        },
+        {
+          "model": "deepseek-coder-1.3b",
+          "benchmark": "HumanEval",
+          "functional_only_n": 37,
+          "static_only_n": 1,
+          "both_n": 6,
+          "none_n": 0,
+          "inconclusive_n": 0,
+          "total_n": 44
+        },
+        {
+          "model": "deepseek-coder-7b",
+          "benchmark": "CEJava",
+          "functional_only_n": 33,
+          "static_only_n": 9,
+          "both_n": 38,
+          "none_n": 5,
+          "inconclusive_n": 11,
+          "total_n": 96
+        },
+        {
+          "model": "deepseek-coder-7b",
+          "benchmark": "CEPython",
+          "functional_only_n": 76,
+          "static_only_n": 0,
+          "both_n": 12,
+          "none_n": 0,
+          "inconclusive_n": 4,
+          "total_n": 92
+        },
+        {
+          "model": "deepseek-coder-7b",
+          "benchmark": "HumanEval",
+          "functional_only_n": 23,
+          "static_only_n": 0,
+          "both_n": 4,
+          "none_n": 1,
+          "inconclusive_n": 1,
+          "total_n": 29
+        },
+        {
+          "model": "deepseek-r1",
+          "benchmark": "CEJava",
+          "functional_only_n": 51,
+          "static_only_n": 1,
+          "both_n": 59,
+          "none_n": 0,
+          "inconclusive_n": 2,
+          "total_n": 113
+        },
+        {
+          "model": "deepseek-r1",
+          "benchmark": "CEPython",
+          "functional_only_n": 47,
+          "static_only_n": 1,
+          "both_n": 11,
+          "none_n": 5,
+          "inconclusive_n": 1,
+          "total_n": 65
+        },
+        {
+          "model": "deepseek-r1",
+          "benchmark": "HumanEval",
+          "functional_only_n": 3,
+          "static_only_n": 0,
+          "both_n": 0,
+          "none_n": 0,
+          "inconclusive_n": 0,
+          "total_n": 3
+        },
+        {
+          "model": "gpt-4",
+          "benchmark": "CEJava",
+          "functional_only_n": 35,
+          "static_only_n": 10,
+          "both_n": 52,
+          "none_n": 3,
+          "inconclusive_n": 4,
+          "total_n": 104
+        },
+        {
+          "model": "gpt-4",
+          "benchmark": "CEPython",
+          "functional_only_n": 63,
+          "static_only_n": 0,
+          "both_n": 10,
+          "none_n": 1,
+          "inconclusive_n": 0,
+          "total_n": 74
+        },
+        {
+          "model": "gpt-4",
+          "benchmark": "HumanEval",
+          "functional_only_n": 9,
+          "static_only_n": 0,
+          "both_n": 2,
+          "none_n": 1,
+          "inconclusive_n": 0,
+          "total_n": 12
+        },
+        {
+          "model": "TOTAL",
+          "benchmark": "all",
+          "functional_only_n": 686,
+          "static_only_n": 46,
+          "both_n": 333,
+          "none_n": 25,
+          "inconclusive_n": 44,
+          "total_n": 1134
+        }
+      ],
+      "gate_states_by_model": [
+        {
+          "model": "codellama-7b",
+          "functional_only_n": 188,
+          "static_only_n": 12,
+          "both_n": 80,
+          "none_n": 6,
+          "inconclusive_n": 3,
+          "total_n": 289
+        },
+        {
+          "model": "deepseek-coder-1.3b",
+          "functional_only_n": 158,
+          "static_only_n": 13,
+          "both_n": 65,
+          "none_n": 3,
+          "inconclusive_n": 18,
+          "total_n": 257
+        },
+        {
+          "model": "deepseek-coder-7b",
+          "functional_only_n": 132,
+          "static_only_n": 9,
+          "both_n": 54,
+          "none_n": 6,
+          "inconclusive_n": 16,
+          "total_n": 217
+        },
+        {
+          "model": "deepseek-r1",
+          "functional_only_n": 101,
+          "static_only_n": 2,
+          "both_n": 70,
+          "none_n": 5,
+          "inconclusive_n": 3,
+          "total_n": 181
+        },
+        {
+          "model": "gpt-4",
+          "functional_only_n": 107,
+          "static_only_n": 10,
+          "both_n": 64,
+          "none_n": 5,
+          "inconclusive_n": 4,
+          "total_n": 190
+        }
+      ],
+      "gate_states_by_benchmark": [
+        {
+          "benchmark": "CEJava",
+          "functional_only_n": 217,
+          "static_only_n": 44,
+          "both_n": 241,
+          "none_n": 14,
+          "inconclusive_n": 31,
+          "total_n": 547
+        },
+        {
+          "benchmark": "CEPython",
+          "functional_only_n": 341,
+          "static_only_n": 1,
+          "both_n": 68,
+          "none_n": 6,
+          "inconclusive_n": 10,
+          "total_n": 426
+        },
+        {
+          "benchmark": "HumanEval",
+          "functional_only_n": 128,
+          "static_only_n": 1,
+          "both_n": 24,
+          "none_n": 5,
+          "inconclusive_n": 3,
+          "total_n": 161
+        }
+      ],
+      "categories_summary": [
+        {
+          "category_code": "R",
+          "category": "Requirement Conflicting",
+          "annotated_n": 470,
+          "annotated_pct": 39.8,
+          "silent_n": 7,
+          "silent_pct": 26.9
+        },
+        {
+          "category_code": "C",
+          "category": "Code Inconsistency",
+          "annotated_n": 298,
+          "annotated_pct": 25.2,
+          "silent_n": 6,
+          "silent_pct": 23.1
+        },
+        {
+          "category_code": "K",
+          "category": "Knowledge Hallucinations",
+          "annotated_n": 413,
+          "annotated_pct": 35.0,
+          "silent_n": 13,
+          "silent_pct": 50.0
+        },
+        {
+          "category_code": "TOTAL",
+          "category": "Total",
+          "annotated_n": 1181,
+          "annotated_pct": 100.0,
+          "silent_n": 26,
+          "silent_pct": 100.0
+        }
+      ],
+      "types_static_summary": [
+        {
+          "type": "Algorithm",
+          "annotated_n": 60,
+          "parsed_n": 57,
+          "without_issue_n": 25,
+          "without_issue_pct_of_parsed": 43.9,
+          "reproved_pct_of_annotated": 66.7,
+          "none_n": 7,
+          "none_pct_of_annotated": 11.7
+        },
+        {
+          "type": "Behavior Conflicting",
+          "annotated_n": 420,
+          "parsed_n": 387,
+          "without_issue_n": 271,
+          "without_issue_pct_of_parsed": 70.0,
+          "reproved_pct_of_annotated": 92.4,
+          "none_n": 6,
+          "none_pct_of_annotated": 1.4
+        },
+        {
+          "type": "Common Sense",
+          "annotated_n": 3,
+          "parsed_n": 3,
+          "without_issue_n": 2,
+          "without_issue_pct_of_parsed": 66.7,
+          "reproved_pct_of_annotated": 100.0,
+          "none_n": 0,
+          "none_pct_of_annotated": 0.0
+        },
+        {
+          "type": "Computer Theory",
+          "annotated_n": 27,
+          "parsed_n": 27,
+          "without_issue_n": 19,
+          "without_issue_pct_of_parsed": 70.4,
+          "reproved_pct_of_annotated": 100.0,
+          "none_n": 0,
+          "none_pct_of_annotated": 0.0
+        },
+        {
+          "type": "Data Conflicting",
+          "annotated_n": 50,
+          "parsed_n": 50,
+          "without_issue_n": 44,
+          "without_issue_pct_of_parsed": 88.0,
+          "reproved_pct_of_annotated": 98.0,
+          "none_n": 1,
+          "none_pct_of_annotated": 2.0
+        },
+        {
+          "type": "Fragmented Logics",
+          "annotated_n": 21,
+          "parsed_n": 21,
+          "without_issue_n": 19,
+          "without_issue_pct_of_parsed": 90.5,
+          "reproved_pct_of_annotated": 95.2,
+          "none_n": 1,
+          "none_pct_of_annotated": 4.8
+        },
+        {
+          "type": "Inconsistent Libraries",
+          "annotated_n": 2,
+          "parsed_n": 2,
+          "without_issue_n": 2,
+          "without_issue_pct_of_parsed": 100.0,
+          "reproved_pct_of_annotated": 100.0,
+          "none_n": 0,
+          "none_pct_of_annotated": 0.0
+        },
+        {
+          "type": "Library/Project",
+          "annotated_n": 309,
+          "parsed_n": 306,
+          "without_issue_n": 186,
+          "without_issue_pct_of_parsed": 60.8,
+          "reproved_pct_of_annotated": 95.1,
+          "none_n": 6,
+          "none_pct_of_annotated": 1.9
+        },
+        {
+          "type": "Mathematics & Natural Science",
+          "annotated_n": 17,
+          "parsed_n": 17,
+          "without_issue_n": 15,
+          "without_issue_pct_of_parsed": 88.2,
+          "reproved_pct_of_annotated": 100.0,
+          "none_n": 0,
+          "none_pct_of_annotated": 0.0
+        },
+        {
+          "type": "Undefined Variables",
+          "annotated_n": 200,
+          "parsed_n": 196,
+          "without_issue_n": 114,
+          "without_issue_pct_of_parsed": 58.2,
+          "reproved_pct_of_annotated": 99.5,
+          "none_n": 1,
+          "none_pct_of_annotated": 0.5
+        },
+        {
+          "type": "Useless Statements (executed without effect)",
+          "annotated_n": 71,
+          "parsed_n": 69,
+          "without_issue_n": 34,
+          "without_issue_pct_of_parsed": 49.3,
+          "reproved_pct_of_annotated": 97.2,
+          "none_n": 1,
+          "none_pct_of_annotated": 1.4
+        },
+        {
+          "type": "Useless Statements (unexecuted)",
+          "annotated_n": 7,
+          "parsed_n": 7,
+          "without_issue_n": 4,
+          "without_issue_pct_of_parsed": 57.1,
+          "reproved_pct_of_annotated": 42.9,
+          "none_n": 3,
+          "none_pct_of_annotated": 42.9
+        },
+        {
+          "type": "TOTAL",
+          "annotated_n": 1187,
+          "parsed_n": 1142,
+          "without_issue_n": 735,
+          "without_issue_pct_of_parsed": 64.4,
+          "reproved_pct_of_annotated": 93.6,
+          "none_n": 26,
+          "none_pct_of_annotated": 2.2
+        }
+      ],
+      "type_composition_silent": [
+        {
+          "type": "Algorithm",
+          "annotated_n": 60,
+          "annotated_pct": 5.1,
+          "silent_n": 7,
+          "silent_pct": 26.9
+        },
+        {
+          "type": "Behavior Conflicting",
+          "annotated_n": 420,
+          "annotated_pct": 35.4,
+          "silent_n": 6,
+          "silent_pct": 23.1
+        },
+        {
+          "type": "Common Sense",
+          "annotated_n": 3,
+          "annotated_pct": 0.3,
+          "silent_n": 0,
+          "silent_pct": 0.0
+        },
+        {
+          "type": "Computer Theory",
+          "annotated_n": 27,
+          "annotated_pct": 2.3,
+          "silent_n": 0,
+          "silent_pct": 0.0
+        },
+        {
+          "type": "Data Conflicting",
+          "annotated_n": 50,
+          "annotated_pct": 4.2,
+          "silent_n": 1,
+          "silent_pct": 3.8
+        },
+        {
+          "type": "Fragmented Logics",
+          "annotated_n": 21,
+          "annotated_pct": 1.8,
+          "silent_n": 1,
+          "silent_pct": 3.8
+        },
+        {
+          "type": "Inconsistent Libraries",
+          "annotated_n": 2,
+          "annotated_pct": 0.2,
+          "silent_n": 0,
+          "silent_pct": 0.0
+        },
+        {
+          "type": "Library/Project",
+          "annotated_n": 309,
+          "annotated_pct": 26.0,
+          "silent_n": 6,
+          "silent_pct": 23.1
+        },
+        {
+          "type": "Mathematics & Natural Science",
+          "annotated_n": 17,
+          "annotated_pct": 1.4,
+          "silent_n": 0,
+          "silent_pct": 0.0
+        },
+        {
+          "type": "Undefined Variables",
+          "annotated_n": 200,
+          "annotated_pct": 16.8,
+          "silent_n": 1,
+          "silent_pct": 3.8
+        },
+        {
+          "type": "Useless Statements (executed without effect)",
+          "annotated_n": 71,
+          "annotated_pct": 6.0,
+          "silent_n": 1,
+          "silent_pct": 3.8
+        },
+        {
+          "type": "Useless Statements (unexecuted)",
+          "annotated_n": 7,
+          "annotated_pct": 0.6,
+          "silent_n": 3,
+          "silent_pct": 11.5
+        },
+        {
+          "type": "TOTAL (associações de tipo)",
+          "annotated_n": 1187,
+          "annotated_pct": 100.0,
+          "silent_n": 26,
+          "silent_pct": 100.0
+        },
+        {
+          "type": "Implementações únicas",
+          "annotated_n": 1134,
+          "silent_n": 25,
+          "silent_pct": 2.2
+        }
+      ],
+      "type_silencing_rate": [
+        {
+          "type": "Algorithm",
+          "silent_n": 7,
+          "annotated_n": 60,
+          "silencing_pct": 11.7
+        },
+        {
+          "type": "Behavior Conflicting",
+          "silent_n": 6,
+          "annotated_n": 420,
+          "silencing_pct": 1.4
+        },
+        {
+          "type": "Common Sense",
+          "silent_n": 0,
+          "annotated_n": 3,
+          "silencing_pct": 0.0
+        },
+        {
+          "type": "Computer Theory",
+          "silent_n": 0,
+          "annotated_n": 27,
+          "silencing_pct": 0.0
+        },
+        {
+          "type": "Data Conflicting",
+          "silent_n": 1,
+          "annotated_n": 50,
+          "silencing_pct": 2.0
+        },
+        {
+          "type": "Fragmented Logics",
+          "silent_n": 1,
+          "annotated_n": 21,
+          "silencing_pct": 4.8
+        },
+        {
+          "type": "Inconsistent Libraries",
+          "silent_n": 0,
+          "annotated_n": 2,
+          "silencing_pct": 0.0
+        },
+        {
+          "type": "Library/Project",
+          "silent_n": 6,
+          "annotated_n": 309,
+          "silencing_pct": 1.9
+        },
+        {
+          "type": "Mathematics & Natural Science",
+          "silent_n": 0,
+          "annotated_n": 17,
+          "silencing_pct": 0.0
+        },
+        {
+          "type": "Undefined Variables",
+          "silent_n": 1,
+          "annotated_n": 200,
+          "silencing_pct": 0.5
+        },
+        {
+          "type": "Useless Statements (executed without effect)",
+          "silent_n": 1,
+          "annotated_n": 71,
+          "silencing_pct": 1.4
+        },
+        {
+          "type": "Useless Statements (unexecuted)",
+          "silent_n": 3,
+          "annotated_n": 7,
+          "silencing_pct": 42.9
+        }
+      ],
+      "type_cooccurrence": [
+        {
+          "type_a": "Algorithm",
+          "type_b": "Behavior Conflicting",
+          "annotated_n": 10,
+          "silent_n": 0
+        },
+        {
+          "type_a": "Behavior Conflicting",
+          "type_b": "Library/Project",
+          "annotated_n": 9,
+          "silent_n": 0
+        },
+        {
+          "type_a": "Behavior Conflicting",
+          "type_b": "Useless Statements (unexecuted)",
+          "annotated_n": 1,
+          "silent_n": 1
+        }
+      ]
+    }
+  },
+  "bootstrap": {
+    "seed": 20261115,
+    "replicas": 200000,
+    "quantiles": [
+      0.025,
+      0.975
+    ],
+    "quantile_rule": "values[int(q*(len(values)-1))]",
+    "clusters": 433,
+    "silent": 25,
+    "total": 1134,
+    "ci_low_pct": 1.3,
+    "ci_high_pct": 3.2,
+    "notes": "IC 95% do manuscrito: [1,3%; 3,2%]"
+  },
+  "notes": [
+    "Os números foram transcritos das Tabelas 1-8 do manuscrito revisado; agregados por modelo e por benchmark (gate_states_by_model, gate_states_by_benchmark, annotations_by_benchmark, total_n das linhas da Tabela 8) são somas aritméticas dessas tabelas, não resultados do pipeline. A conferência célula a célula e a aprovação final do status são do orquestrador após a execução limpa.",
+    "Errata pendente no Overleaf: a Tabela 1 do manuscrito revisado imprime 27,9% para 'Total Com (parseada)' do corpus completo, mas 838/3.009 = 27,849%, que arredonda para 27,8% pela regra half-up. As demais células da mesma tabela conferem (26,9% e 33,4%/34,8% na população anotada). O artefato usa 27,8% e registra a diferença; o documento não foi corrigido porque a alteração do Overleaf não foi autorizada nesta etapa.",
+    "Percentuais usam uma casa decimal com arredondamento half-up; a comparação tolera 0,05 p.p.",
+    "Este arquivo não afirma reprodução numérica 1:1 de todas as células do texto: a varredura estática não é recomputada e a única divergência conhecida é a errata de arredondamento 27,9% → 27,8%."
+  ]
+}

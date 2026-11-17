@@ -1,0 +1,8 @@
+# Sem dependências de terceiros: o artefato usa apenas a biblioteca padrão.
+#
+# Extração, tabelas descritivas, histograma e bootstrap agrupado rodam com
+# Python 3.11+ (testado em 3.14):
+#   - json, csv, re, hashlib, random, decimal, itertools, collections
+#
+# Não há numpy, pandas, matplotlib nem cliente HTTP. Gráficos e notebooks não
+# fazem parte deste pacote.
